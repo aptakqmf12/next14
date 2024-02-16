@@ -1,4 +1,8 @@
-# routing
+# app router?
+
+next.js의 앱라우터는 `server component`, `server actions`, `streaming`, `suspense`과 같은 react 최신 기능을 사용하여 애플리케이션을 구축함.
+
+## routing
 
 - dynamicSegment : `slug`
 
@@ -21,7 +25,7 @@
 
 - middleware : `src/middleware.ts`에 정의하여 api요청이 닿기전에 조작(응답 헤더를 재작성, 리디렉션, 수정)할수있다.
 
-# fetching / caching & revalidating
+## fetching / caching & revalidating
 
 next.js는 js의 `fetch`를 확장하여 캐싱 및 재검증을 구현했다.
 
@@ -33,6 +37,9 @@ next.js는 js의 `fetch`를 확장하여 캐싱 및 재검증을 구현했다.
   - `revalidateTag`함수에 tag를 인자로 넘겨주면 revalidate처리 됨
 
 - severActions :
+  - client component에서 서버액션을 사용하려면 서버액션을 따로 파일로 나누어 import하여 사용한다
+  - server component에서 서버액션을 사용하면 별도의 state없이 form 작업이 가능하다!
+  - `useFormStatus`를 사용해서 form의 pending상태를 알수있음.
 
 <!-- ```
 📦MonoRepo-with-YarnBerry
