@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 /** https://nextjs.org/docs/app/building-your-application/routing/intercepting-routes
@@ -18,5 +19,12 @@ import React from "react";
  */
 
 export default function page() {
-  return <div>인터셉트 라우트</div>;
+  return (
+    <div>
+      인터셉트 라우트
+      <Link href={"/routing/interceptingRoute/photo/123"}>
+        Photo 페이지로 이동
+      </Link>
+    </div>
+  );
 }

@@ -33,7 +33,9 @@ export default function Navigation() {
           </Link>
         </li>
         <li>
-          <Link href="/routing/interceptingRoute">interceptingRoute</Link>
+          <Link href="/routing/interceptingRoute/photo/123">
+            interceptingRoute
+          </Link>
         </li>
       </StyledUl>
     </nav>
