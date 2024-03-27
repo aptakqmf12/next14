@@ -37,9 +37,31 @@ next.js는 js의 `fetch`를 확장하여 캐싱 및 재검증을 구현했다.
   - `revalidateTag`함수에 tag를 인자로 넘겨주면 revalidate처리 됨
 
 - severActions :
+
   - client component에서 서버액션을 사용하려면 서버액션을 따로 파일로 나누어 import하여 사용한다
   - server component에서 서버액션을 사용하면 별도의 state없이 form 작업이 가능하다!
   - `useFormStatus`를 사용해서 form의 pending상태를 알수있음.
+  - `useFormState`를 사용하면 폼데이터에 대한 내용을 useState없이 구현가능. (서버에서 사용)
+
+- sequential data fetch : 순차적인 data fetch로 각 api마다 `Suspense`를 래핑하여 바운더리를 설정하여 fallback으로 loading시 표현가능함. 이때 Suspense없이 loading.tsx를 작성하면 전체 페이지에 대해서 래핑된다.
+
+- parallel data fetch : `Promise.all`를 사용하여 병렬적인 data fetch처리.
+
+- preloading : `preload`라는 함수를 만들어서 preload를 시킨뒤 다른 비동기 작업을 수행. 워터폴을 방지하고, promise를 사용할필요없음
+
+  ## Rendering
+
+  ### Server component
+
+  - 데이터 fetch를 보다 실제서버와 가까운곳에서 처리하여 데이터를 가져오는데 걸리는 시간을 줄여 성능향상
+  - 토큰, API key 같이 민감한 데이터와 로직을 클라이언트에 노출없이 서버에서 관리하여 보안향상
+  - 서버에서 렌더링하면 결과를 캐싱하여 후속 요청에 대해 재사용 가능하다.
+  - 클라이언트가 js번들을 받지않아도 돼서 인터넷 속도가 느린경우에도 빠른 대응가능
+  - First Contentful Paint (FCP)가 개선됨.
+
+  # 책갈피 (다음 공부 시작지점)
+
+  https://nextjs.org/docs/app/building-your-application/data-fetching/patterns#using-react-cache-server-only-and-the-preload-pattern
 
 <!-- ```
 📦MonoRepo-with-YarnBerry

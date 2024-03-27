@@ -12,6 +12,9 @@ export default function ClientPage() {
     setFlag(!flag);
   };
 
+  // `.bind` works in both Server and Client Components.
+  // const actionInServerWithId = actionInServer.bind(id)
+
   return (
     <div>
       <div>{String(flag)}</div>
