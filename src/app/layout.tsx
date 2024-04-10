@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "./_component/nav";
-
+import { MSWComponent } from "./_component/MSWComponent";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -17,6 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <MSWComponent />
       <body className={inter.className}>
         <header>{/* <Navigation /> */}</header>
 

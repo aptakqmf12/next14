@@ -59,9 +59,16 @@ next.js는 js의 `fetch`를 확장하여 캐싱 및 재검증을 구현했다.
   - 클라이언트가 js번들을 받지않아도 돼서 인터넷 속도가 느린경우에도 빠른 대응가능
   - First Contentful Paint (FCP)가 개선됨.
 
+  서버액션은 화면에 피드백 X
+
   # 책갈피 (다음 공부 시작지점)
 
   https://nextjs.org/docs/app/building-your-application/data-fetching/patterns#using-react-cache-server-only-and-the-preload-pattern
+
+  # React-query
+
+  - invalidate : active인 query들만 다시 가져오기.
+    - querykey가 ["post"]이면 "post"로 시작하는 모든 queryKey를 invalidate하는것.
 
 <!-- ```
 📦MonoRepo-with-YarnBerry
